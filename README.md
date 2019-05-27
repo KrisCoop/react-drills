@@ -236,15 +236,9 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <input
-          onChange={e => this.handleUsernameChange(e.target.value)}
-          type="text"
-        />
-        <input
-          onChange={e => this.handlePasswordChange(e.target.value)}
-          type="text"
-        />
-        <button onClick={this.handleLogin}>Login</button>
+        <input type="text" placeholder="username" onChange={e=> this.updateUsername(e.target.value)}></input>
+        <input type="password" onChange={e=> this.updatePassword(e.target.value)}></input>
+        <button>Login</button>
       </div>
     );
   }

@@ -3,16 +3,26 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state={
+      cheatFoods = ["Twizzlers", "Oreos", "Doritos", "Donuts", "Pizza"],
+      userInput = ""
+    }
+  }
+
+  doThing(val){
+    this.setState({
+      userInput: val
+    })
+  }
+
   render() {
+    let foodList = this.state.cheatFoods.filter((e)=> e.includes(this.state.userInput)).map <h2>{e}</h2>
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <input type="text" onChange={(e)=> doThing(e.target.value)}></input>
+          {foodList}
       </div>
     );
   }
